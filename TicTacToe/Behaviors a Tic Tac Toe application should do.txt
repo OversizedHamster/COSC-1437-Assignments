@@ -1,3 +1,5 @@
+Ethan Smith
+
 1. The user should input a name which will be displayed at the top of the screen
 
 2. Moves are checked after each selection to see if the win condition was triggered
