@@ -1,4 +1,6 @@
-﻿namespace Main_Application
+﻿//Ethan Smith
+
+namespace Main_Application
 {
     partial class Form1
     {

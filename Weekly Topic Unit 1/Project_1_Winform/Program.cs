@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Ethan Smith
+
 namespace Project_1_Winform
 {
     static class Program
