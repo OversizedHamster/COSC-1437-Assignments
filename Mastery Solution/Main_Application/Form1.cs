@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
+//Ethan Smith
+
 namespace Main_Application
 {
     public partial class Form1 : Form
