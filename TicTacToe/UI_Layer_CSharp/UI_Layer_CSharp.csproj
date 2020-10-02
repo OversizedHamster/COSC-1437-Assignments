@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <!--Ethan Smith-->
+
+	<PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>tic-tac-toe.ico</ApplicationIcon>
+    <Authors>Ethan Smith</Authors>
+    <Company>Lone Star College</Company>
+    <Product>Tic Tac Toe</Product>
+    <Description>This is an eucational project utilized to demonstrate many of the concepts taught in Programming Fundamentals.</Description>
+    <Copyright>Copyright Ethan Smith 2020</Copyright>
+  </PropertyGroup>
+
+</Project>
