@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <!--Ethan Smith-->
+
+	<PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="star.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="star.png" />
+  </ItemGroup>
+
+</Project>
