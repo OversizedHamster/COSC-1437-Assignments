@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!--Ethan Smith-->
+
+	<PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Ethan Smith</Authors>
+    <Company>Lone Star College</Company>
+    <Product>CoreLibraries</Product>
+  </PropertyGroup>
+
+</Project>
