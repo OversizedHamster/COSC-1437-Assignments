@@ -1,4 +1,6 @@
-﻿namespace UI_Layer_CSharp
+﻿//Ethan Smith
+
+namespace UI_Layer_CSharp
 {
     partial class AboutBox
     {
