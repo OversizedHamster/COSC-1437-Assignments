@@ -87,6 +87,7 @@ namespace Main_Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.exitApplicationBtn;
             this.ClientSize = new System.Drawing.Size(832, 462);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitApplicationBtn);
