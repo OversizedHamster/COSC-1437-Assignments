@@ -44,6 +44,8 @@
             this.btnCell20 = new System.Windows.Forms.Button();
             this.btnCell21 = new System.Windows.Forms.Button();
             this.btnCell22 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
@@ -100,7 +102,7 @@
             // btnCell00
             // 
             this.btnCell00.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell00.Location = new System.Drawing.Point(273, 118);
+            this.btnCell00.Location = new System.Drawing.Point(0, 0);
             this.btnCell00.Name = "btnCell00";
             this.btnCell00.Size = new System.Drawing.Size(75, 75);
             this.btnCell00.TabIndex = 5;
@@ -111,7 +113,7 @@
             // btnCell01
             // 
             this.btnCell01.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell01.Location = new System.Drawing.Point(363, 118);
+            this.btnCell01.Location = new System.Drawing.Point(91, 0);
             this.btnCell01.Name = "btnCell01";
             this.btnCell01.Size = new System.Drawing.Size(75, 75);
             this.btnCell01.TabIndex = 5;
@@ -122,7 +124,7 @@
             // btnCell02
             // 
             this.btnCell02.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell02.Location = new System.Drawing.Point(454, 118);
+            this.btnCell02.Location = new System.Drawing.Point(181, 0);
             this.btnCell02.Name = "btnCell02";
             this.btnCell02.Size = new System.Drawing.Size(75, 75);
             this.btnCell02.TabIndex = 5;
@@ -133,7 +135,7 @@
             // btnCell10
             // 
             this.btnCell10.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell10.Location = new System.Drawing.Point(273, 213);
+            this.btnCell10.Location = new System.Drawing.Point(0, 95);
             this.btnCell10.Name = "btnCell10";
             this.btnCell10.Size = new System.Drawing.Size(75, 75);
             this.btnCell10.TabIndex = 5;
@@ -144,7 +146,7 @@
             // btnCell11
             // 
             this.btnCell11.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell11.Location = new System.Drawing.Point(363, 213);
+            this.btnCell11.Location = new System.Drawing.Point(91, 95);
             this.btnCell11.Name = "btnCell11";
             this.btnCell11.Size = new System.Drawing.Size(75, 75);
             this.btnCell11.TabIndex = 5;
@@ -155,7 +157,7 @@
             // btnCell12
             // 
             this.btnCell12.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell12.Location = new System.Drawing.Point(454, 213);
+            this.btnCell12.Location = new System.Drawing.Point(181, 95);
             this.btnCell12.Name = "btnCell12";
             this.btnCell12.Size = new System.Drawing.Size(75, 75);
             this.btnCell12.TabIndex = 5;
@@ -166,7 +168,7 @@
             // btnCell20
             // 
             this.btnCell20.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell20.Location = new System.Drawing.Point(273, 308);
+            this.btnCell20.Location = new System.Drawing.Point(0, 190);
             this.btnCell20.Name = "btnCell20";
             this.btnCell20.Size = new System.Drawing.Size(75, 75);
             this.btnCell20.TabIndex = 5;
@@ -177,7 +179,7 @@
             // btnCell21
             // 
             this.btnCell21.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell21.Location = new System.Drawing.Point(363, 308);
+            this.btnCell21.Location = new System.Drawing.Point(91, 190);
             this.btnCell21.Name = "btnCell21";
             this.btnCell21.Size = new System.Drawing.Size(75, 75);
             this.btnCell21.TabIndex = 5;
@@ -188,7 +190,7 @@
             // btnCell22
             // 
             this.btnCell22.Font = new System.Drawing.Font("Comic Sans MS", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCell22.Location = new System.Drawing.Point(454, 308);
+            this.btnCell22.Location = new System.Drawing.Point(181, 190);
             this.btnCell22.Name = "btnCell22";
             this.btnCell22.Size = new System.Drawing.Size(75, 75);
             this.btnCell22.TabIndex = 5;
@@ -196,21 +198,30 @@
             this.btnCell22.UseVisualStyleBackColor = true;
             this.btnCell22.Click += new System.EventHandler(this.btnCell22_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCell02);
+            this.panel1.Controls.Add(this.btnCell20);
+            this.panel1.Controls.Add(this.btnCell21);
+            this.panel1.Controls.Add(this.btnCell22);
+            this.panel1.Controls.Add(this.btnCell00);
+            this.panel1.Controls.Add(this.btnCell01);
+            this.panel1.Controls.Add(this.btnCell12);
+            this.panel1.Controls.Add(this.btnCell10);
+            this.panel1.Controls.Add(this.btnCell11);
+            this.panel1.Location = new System.Drawing.Point(261, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(256, 265);
+            this.panel1.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(584, 411);
-            this.Controls.Add(this.btnCell22);
-            this.Controls.Add(this.btnCell21);
-            this.Controls.Add(this.btnCell20);
-            this.Controls.Add(this.btnCell12);
-            this.Controls.Add(this.btnCell11);
-            this.Controls.Add(this.btnCell10);
-            this.Controls.Add(this.btnCell02);
-            this.Controls.Add(this.btnCell01);
-            this.Controls.Add(this.btnCell00);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtPlayerName);
             this.Controls.Add(this.btnGoComputer);
             this.Controls.Add(this.btnStartNewGame);
@@ -221,6 +232,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Tic Tac Toe CSharp Version - Ethan Smith";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +254,7 @@
         private System.Windows.Forms.Button btnCell20;
         private System.Windows.Forms.Button btnCell21;
         private System.Windows.Forms.Button btnCell22;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

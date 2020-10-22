@@ -30,7 +30,7 @@ namespace UI_Layer_CSharp
 
             btnStartNewGame.Enabled = playerNameIsValid;
             btnGoComputer.Enabled = playerNameIsValid;
-            btnCell00.Enabled = playerNameIsValid;
+            panel1.Enabled = playerNameIsValid;
         }
 
         private void txtPlayerName_Validated(object sender, EventArgs e)
