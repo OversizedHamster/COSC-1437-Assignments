@@ -11,179 +11,65 @@ namespace CoreLibrary_Tests.Extensions
     {
         #region IsNullOrEmpty
 
-        [TestMethod]
-        public void IsNullOrEmpty_HasContent()
+        [DataTestMethod]
+        [DataRow("", true)]
+        [DataRow(" ", false)]
+        [DataRow(null, true)]
+        [DataRow("Prof Reynolds", false)]
+        public void IsNullOrEmpty_Test(string testCondition, bool expectedResult)
         {
-            string testCondition = "test";
-
             var actualResult = testCondition.IsNullOrEmpty();
 
-            actualResult.ShouldBeFalse();
-        }
-
-        [TestMethod]
-        public void IsNullOrEmpty_IsEmpty()
-        {
-            string testCondition = string.Empty;
-
-            var actualResult = testCondition.IsNullOrEmpty();
-
-            actualResult.ShouldBeTrue();
-        }
-
-        [TestMethod]
-        public void IsNullOrEmpty_IsNull()
-        {
-            string testCondition = null;
-
-            var actualResult = testCondition.IsNullOrEmpty();
-
-            actualResult.ShouldBeTrue();
-        }
-
-        [TestMethod]
-        public void IsNullOrEmpty_IsSpaces()
-        {
-            string testCondition = " ";
-
-            var actualResult = testCondition.IsNullOrEmpty();
-
-            actualResult.ShouldBeFalse();
+            actualResult.ShouldBe(expectedResult);
         }
 
         #endregion
 
         #region IsNullOrWhiteSpace
 
-        [TestMethod]
-        public void IsNullOrWhiteSpace_HasContent()
+        [DataTestMethod]
+        [DataRow("", true)]
+        [DataRow(" ", true)]
+        [DataRow(null, true)]
+        [DataRow("Prof Reynolds", false)]
+        public void IsNullOrWhiteSpace_Test(string testCondition, bool expectedResult)
         {
-            string testCondition = "test";
-
             var actualResult = testCondition.IsNullOrWhiteSpace();
 
-            actualResult.ShouldBeFalse();
-        }
-
-        [TestMethod]
-        public void IsNullOrWhiteSpace_IsEmpty()
-        {
-            string testCondition = string.Empty;
-
-            var actualResult = testCondition.IsNullOrWhiteSpace();
-
-            actualResult.ShouldBeTrue();
-        }
-
-        [TestMethod]
-        public void IsNullOrWhiteSpace_IsNull()
-        {
-            string testCondition = null;
-
-            var actualResult = testCondition.IsNullOrWhiteSpace();
-
-            actualResult.ShouldBeTrue();
-        }
-
-        [TestMethod]
-        public void IsNullOrWhiteSpace_IsSpaces()
-        {
-            string testCondition = " ";
-
-            var actualResult = testCondition.IsNullOrWhiteSpace();
-
-            actualResult.ShouldBeTrue();
+            actualResult.ShouldBe(expectedResult);
         }
 
         #endregion
 
         #region Left
 
-        [TestMethod]
-        public void Left_IsNull()
+        [DataTestMethod]
+        [DataRow("Prof Reynolds", 8, "Prof Rey")]
+        [DataRow("Prof Reynolds", 99, "Prof Reynolds")]
+        [DataRow("Prof Reynolds", 0, "")]
+        [DataRow(null, 99, null)]
+        public void Left_Test(string testCondition, int numCharacters, string expectedResult)
         {
-            string testCondition = null;
+            var actualResult = testCondition.Left(numCharacters);
 
-            var actualResult = testCondition.Left(5);
-
-            actualResult.ShouldBeNull();
-        }
-
-        [TestMethod]
-        public void Left_NoCharacters()
-        {
-            string testCondition = string.Empty;
-
-            var actualResult = testCondition.Left(5);
-
-            actualResult.ShouldBeEmpty();
-        }
-
-        [TestMethod]
-        public void Left_Normal()
-        {
-            string testCondition = "test";
-
-            var actualResult = testCondition.Left(2);
-
-            actualResult.ShouldBe("te");
-        }
-
-        [TestMethod]
-        public void Left_TooManyCharacters()
-        {
-            string testCondition = "test";
-
-            var actualResult = testCondition.Left(5);
-
-            actualResult.ShouldBe("test");
+            actualResult.ShouldBe(expectedResult);
         }
 
         #endregion
 
         #region Right
 
-        [TestMethod]
-        public void Right_IsNull()
+        [DataTestMethod]
+        [DataRow("Prof Reynolds", 1, "rof Reynolds")]
+        [DataRow("Prof Reynolds", 99, "")]
+        [DataRow("Prof Reynolds", 0, "Prof Reynold")]
+        [DataRow(null, 99, null)]
+        public void Right_Test(string testCondition, int numCharacters, string expectedResult)
         {
-            string testCondition = null;
+            var actualResult = testCondition.Right(numCharacters);
 
-            var actualResult = testCondition.Right(5);
-
-            actualResult.ShouldBeNull();
+            actualResult.ShouldBe(expectedResult);
         }
-
-        [TestMethod]
-        public void Right_NoCharacters()
-        {
-            string testCondition = string.Empty;
-
-            var actualResult = testCondition.Right(5);
-
-            actualResult.ShouldBeEmpty();
-        }
-
-        [TestMethod]
-        public void Right_Normal()
-        {
-            string testCondition = "test";
-
-            var actualResult = testCondition.Right(1);
-
-            actualResult.ShouldBe("est");
-        }
-
-        [TestMethod]
-        public void Right_TooManyCharacters()
-        {
-            string testCondition = "test";
-
-            var actualResult = testCondition.Right(5);
-
-            actualResult.ShouldBeEmpty();
-        }
-
-
 
         #endregion
     }
