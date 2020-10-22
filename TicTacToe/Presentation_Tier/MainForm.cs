@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace UI_Layer_CSharp
+namespace Presentation_Tier
 {
     //Ethan Smith
 

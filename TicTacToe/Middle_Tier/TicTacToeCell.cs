@@ -2,7 +2,7 @@
 
 //Ethan Smith
 
-namespace Business_Layer_CSharp
+namespace Middle_Tier
 {
     public class TicTacToeCell : ITicTacToeCell
     {

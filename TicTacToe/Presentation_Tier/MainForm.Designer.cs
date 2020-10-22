@@ -1,4 +1,4 @@
-﻿namespace UI_Layer_CSharp
+﻿namespace Presentation_Tier
 {
     //Ethan Smith
 
