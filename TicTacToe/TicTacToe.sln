@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middle_Tier", "Middle_Tier\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe_Interfaces", "TicTacToe_Interfaces\TicTacToe_Interfaces.csproj", "{F18BA59B-46C3-46A9-BA6E-4BB62FD6A02A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middle_Tier_Tests", "Middle_Tier_Tests\Middle_Tier_Tests.csproj", "{B5A7EDDE-C676-41FF-B9D1-6C801C2EA348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{F18BA59B-46C3-46A9-BA6E-4BB62FD6A02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F18BA59B-46C3-46A9-BA6E-4BB62FD6A02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F18BA59B-46C3-46A9-BA6E-4BB62FD6A02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A7EDDE-C676-41FF-B9D1-6C801C2EA348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A7EDDE-C676-41FF-B9D1-6C801C2EA348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A7EDDE-C676-41FF-B9D1-6C801C2EA348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A7EDDE-C676-41FF-B9D1-6C801C2EA348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
