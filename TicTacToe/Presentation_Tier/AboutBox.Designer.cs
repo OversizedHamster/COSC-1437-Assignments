@@ -1,6 +1,6 @@
 ﻿//Ethan Smith
 
-namespace UI_Layer_CSharp
+namespace Presentation_Tier
 {
     partial class AboutBox
     {
