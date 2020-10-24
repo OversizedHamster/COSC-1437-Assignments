@@ -13,6 +13,10 @@ namespace Demonstrator_3
             Console.WriteLine("Ethan Smith Demonstrator_3");
             Console.WriteLine();
 
+            /*
+             * ProfReynolds
+             * this is exactly what I was looking for
+             */
             myGeometricShapes = new Triangle {SideLength = 123.456};
             TellAboutTheShape(myGeometricShapes);
 
