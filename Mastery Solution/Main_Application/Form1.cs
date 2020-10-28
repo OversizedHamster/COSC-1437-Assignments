@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
+using System.IO;
 
 //Ethan Smith
 
 namespace Main_Application
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             Bitmap bitmap = (Bitmap)pictureBox1.Image;
@@ -71,6 +72,40 @@ namespace Main_Application
 
             return newImg;
 
+        }
+
+        private void btnExitApplication_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = @"Comma Separated Values|*.csv|Text File|*.txt",
+                Title = @"Select the Hundred Names database"
+            };
+
+            var dialogResult = openFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(
+                    openFileDialog.SafeFileName,
+                    @"You Selected", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                txtFileName.Text = openFileDialog.SafeFileName;
+
+                using(StreamReader sr = File.OpenText(openFileDialog.FileName))
+                {
+                    var oneLineOfText = "";
+                    while((oneLineOfText = sr.ReadLine()) != null)
+                    {
+                        lbFileOutput.Items.Add(oneLineOfText);
+                    }
+                }
+            }
         }
     }
 }
