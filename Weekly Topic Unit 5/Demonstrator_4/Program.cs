@@ -7,6 +7,10 @@ namespace Demonstrator_4
     {
         static void Main(string[] args)
         {
+            /*
+             * ProfReynolds
+             * notice how this implements exactly like the interface
+             */
             AbstractGeometricShape myGeometricShapes;
             Console.WriteLine("Ethan Smith Demonstrator_3");
             Console.WriteLine();
