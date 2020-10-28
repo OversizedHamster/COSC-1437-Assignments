@@ -14,4 +14,9 @@
     <Copyright>Copyright Ethan Smith 2020</Copyright>
   </PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Middle_Tier\Middle_Tier.csproj" />
+	  <ProjectReference Include="..\TicTacToe_Interfaces\TicTacToe_Interfaces.csproj" />
+	</ItemGroup>
+
 </Project>
