@@ -36,6 +36,8 @@ namespace Main_Application
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReadEncryptedFile = new System.Windows.Forms.Button();
+            this.btnWriteEncryptedFile = new System.Windows.Forms.Button();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbFileOutput = new System.Windows.Forms.ListBox();
@@ -87,6 +89,8 @@ namespace Main_Application
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReadEncryptedFile);
+            this.panel1.Controls.Add(this.btnWriteEncryptedFile);
             this.panel1.Controls.Add(this.btnOpenFile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -94,11 +98,31 @@ namespace Main_Application
             this.panel1.Size = new System.Drawing.Size(175, 335);
             this.panel1.TabIndex = 4;
             // 
+            // btnReadEncryptedFile
+            // 
+            this.btnReadEncryptedFile.Location = new System.Drawing.Point(22, 180);
+            this.btnReadEncryptedFile.Name = "btnReadEncryptedFile";
+            this.btnReadEncryptedFile.Size = new System.Drawing.Size(131, 42);
+            this.btnReadEncryptedFile.TabIndex = 1;
+            this.btnReadEncryptedFile.Text = "Read Encrypted File";
+            this.btnReadEncryptedFile.UseVisualStyleBackColor = true;
+            this.btnReadEncryptedFile.Click += new System.EventHandler(this.btnReadEncryptedFile_Click);
+            // 
+            // btnWriteEncryptedFile
+            // 
+            this.btnWriteEncryptedFile.Location = new System.Drawing.Point(22, 121);
+            this.btnWriteEncryptedFile.Name = "btnWriteEncryptedFile";
+            this.btnWriteEncryptedFile.Size = new System.Drawing.Size(131, 42);
+            this.btnWriteEncryptedFile.TabIndex = 1;
+            this.btnWriteEncryptedFile.Text = " Write Encrypted File";
+            this.btnWriteEncryptedFile.UseVisualStyleBackColor = true;
+            this.btnWriteEncryptedFile.Click += new System.EventHandler(this.btnWriteEncryptedFile_Click);
+            // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(26, 49);
+            this.btnOpenFile.Location = new System.Drawing.Point(22, 69);
             this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(105, 40);
+            this.btnOpenFile.Size = new System.Drawing.Size(131, 37);
             this.btnOpenFile.TabIndex = 0;
             this.btnOpenFile.Text = "Open CSV File";
             this.btnOpenFile.UseVisualStyleBackColor = true;
@@ -172,6 +196,7 @@ namespace Main_Application
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "MainForm";
             this.Text = "Master Assignment - Ethan Smith";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -197,6 +222,8 @@ namespace Main_Application
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.ListBox lbFileOutput;
         private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.Button btnReadEncryptedFile;
+        private System.Windows.Forms.Button btnWriteEncryptedFile;
     }
 }
 
