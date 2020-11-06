@@ -171,8 +171,8 @@ namespace Main_Application
             Debug.WriteLine($"Property 'CanRead' : {outputFileStream.CanRead}");
 
             DESCryptoServiceProvider crypt = new DESCryptoServiceProvider();
-            crypt.Key = new byte[] { 71, 72, 83, 84, 85, 96, 97, 78 };
-            crypt.IV = new byte[] { 71, 72, 83, 84, 85, 96, 97, 78 };
+            crypt.Key = new byte[] { 23, 48, 62, 25, 94, 72, 35, 16 };
+            crypt.IV = new byte[] { 23, 48, 62, 25, 94, 72, 35, 16 };
 
             CryptoStream cs =
                 new CryptoStream(outputFileStream,
@@ -194,8 +194,8 @@ namespace Main_Application
             // (1) Create Data Encryption Standard (DES) object.
             DESCryptoServiceProvider crypt = new DESCryptoServiceProvider();
             // (2) Create a key and Initialization Vector
-            crypt.Key = new byte[] { 71, 72, 83, 84, 85, 96, 97, 78 };
-            crypt.IV = new byte[] { 71, 72, 83, 84, 85, 96, 97, 78 };
+            crypt.Key = new byte[] { 23, 48, 62, 25, 94, 72, 35, 16 };
+            crypt.IV = new byte[] { 23, 48, 62, 25, 94, 72, 35, 16 };
             // (3) Create CryptoStream stream object
             CryptoStream cs =
                 new CryptoStream(inputFileStream,

@@ -42,8 +42,8 @@ namespace Presentation_Tier
         private void btnStartNewGame_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("btnStartNewGame", "ButtonClick");
-            var btn = sender as Button;
-            if (btn != null)
+
+            if (sender is Button btn)
             {
                 btn.Text = "?";
             }
