@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
+using CoreLibrary;
+using TicTacToe_Interfaces;
 
 namespace Presentation_Tier
 {
@@ -52,6 +55,7 @@ namespace Presentation_Tier
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("btnGoComputer", "ButtonClick");
+            if (_ticTacToeGame.Winner != TicTacToeEnums.CellOwners.Open) return;
 
             _ticTacToeGame.AutoPlayComputer();
 
@@ -63,47 +67,68 @@ namespace Presentation_Tier
 
         private void btnCell00_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell00", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell01_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell01", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell02_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell02", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell10_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell10", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell11_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell11", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell12_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell12", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell20_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell20", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell21_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell21", "ButtonClick");
+            btnCellxx_Click(sender, e);
         }
 
         private void btnCell22_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("btnCell22", "ButtonClick");
+            btnCellxx_Click(sender, e);
+        }
+
+        private void btnCellxx_Click(object sender, EventArgs e)
+        {
+            if (_ticTacToeGame.Winner != TicTacToeEnums.CellOwners.Open) return;
+
+            var btn = sender as Button;
+
+            int rowID = btn.Name.Substring(7, 1).ToInt();
+
+            int colID = btn.Name.Substring(8, 1).ToInt();
+
+            Debug.WriteLine($"Button click: row={rowID} col={colID}");
+
+            _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToeEnums.CellOwners.Human);
+            btn.Text = "X";
+
+            if (_ticTacToeGame.CheckForWinner())
+            {
+                MessageBox.Show("The Winner!");
+            }
         }
     }
 }

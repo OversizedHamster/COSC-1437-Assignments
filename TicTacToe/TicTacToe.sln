@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middle_Tier_Tests", "Middle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfReynoldsUnitTests", "ProfReynoldsUnitTests\ProfReynoldsUnitTests.csproj", "{5E0D2FF4-EC2B-47BB-A301-A6A033DC6EE6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLibrary", "CoreLibrary\CoreLibrary.csproj", "{EC3F5787-E0E5-4282-B857-871BE061450D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{5E0D2FF4-EC2B-47BB-A301-A6A033DC6EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0D2FF4-EC2B-47BB-A301-A6A033DC6EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0D2FF4-EC2B-47BB-A301-A6A033DC6EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3F5787-E0E5-4282-B857-871BE061450D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3F5787-E0E5-4282-B857-871BE061450D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3F5787-E0E5-4282-B857-871BE061450D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3F5787-E0E5-4282-B857-871BE061450D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

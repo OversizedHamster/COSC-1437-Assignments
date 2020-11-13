@@ -15,6 +15,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj" />
 	  <ProjectReference Include="..\Middle_Tier\Middle_Tier.csproj" />
 	  <ProjectReference Include="..\TicTacToe_Interfaces\TicTacToe_Interfaces.csproj" />
 	</ItemGroup>
