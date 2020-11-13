@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -232,6 +233,22 @@ namespace Main_Application
                 var parsedArrayOfStrings = Regex.Split(fileContent, "\\n");
 
                 lbFileOutput.Items.AddRange(parsedArrayOfStrings);
+            }
+        }
+
+        private void btnReadFromSql_Click(object sender, EventArgs e)
+        {
+            lbFileOutput.Items.Clear();
+
+            var sqlConnectionString = Properties.Resources.SqlConnectionString;
+            var dataTableQueryString = @"SELECT [CustomerID], [CompanyName] ,[ContactName] FROM [Customers]";
+
+            var conventionalAdo = new DatabaseAccess.ConventionalAdo();
+            var runQueryTable = conventionalAdo.RunQueryTable(sqlConnectionString, dataTableQueryString);
+
+            foreach (DataRow dataRow in runQueryTable.Rows)
+            {
+                lbFileOutput.Items.Add($"ID: {dataRow["CustomerID"]}, Customer Name: {dataRow["ContactName"]}");
             }
         }
     }

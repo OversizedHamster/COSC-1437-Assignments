@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgRotated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgRotated1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SqlConnectionString" xml:space="preserve">
     <value>Data Source=sql5071.site4now.net;Initial Catalog=DB_9EF7AD_Northwind;User Id=COSC;Password=L0n3st4r;</value>
     <comment>This connection string is used by the COSC classes as a demonstrator.</comment>

@@ -44,6 +44,7 @@ namespace Main_Application
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnExitApplication = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ReadFromSql = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +90,7 @@ namespace Main_Application
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ReadFromSql);
             this.panel1.Controls.Add(this.btnReadEncryptedFile);
             this.panel1.Controls.Add(this.btnWriteEncryptedFile);
             this.panel1.Controls.Add(this.btnOpenFile);
@@ -160,7 +162,7 @@ namespace Main_Application
             // btnExitApplication
             // 
             this.btnExitApplication.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnExitApplication.Location = new System.Drawing.Point(51, 312);
+            this.btnExitApplication.Location = new System.Drawing.Point(51, 282);
             this.btnExitApplication.Name = "btnExitApplication";
             this.btnExitApplication.Size = new System.Drawing.Size(230, 37);
             this.btnExitApplication.TabIndex = 6;
@@ -177,6 +179,16 @@ namespace Main_Application
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 335);
             this.panel3.TabIndex = 7;
+            // 
+            // ReadFromSql
+            // 
+            this.ReadFromSql.Location = new System.Drawing.Point(22, 237);
+            this.ReadFromSql.Name = "ReadFromSql";
+            this.ReadFromSql.Size = new System.Drawing.Size(131, 42);
+            this.ReadFromSql.TabIndex = 1;
+            this.ReadFromSql.Text = "Read From Sql";
+            this.ReadFromSql.UseVisualStyleBackColor = true;
+            this.ReadFromSql.Click += new System.EventHandler(this.btnReadFromSql_Click);
             // 
             // MainForm
             // 
@@ -224,6 +236,7 @@ namespace Main_Application
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnReadEncryptedFile;
         private System.Windows.Forms.Button btnWriteEncryptedFile;
+        private System.Windows.Forms.Button ReadFromSql;
     }
 }
 
