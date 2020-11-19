@@ -108,7 +108,7 @@
             this.btnCell00.TabIndex = 5;
             this.btnCell00.Text = "?";
             this.btnCell00.UseVisualStyleBackColor = true;
-            this.btnCell00.Click += new System.EventHandler(this.btnCell00_Click);
+            this.btnCell00.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell01
             // 
@@ -119,7 +119,7 @@
             this.btnCell01.TabIndex = 5;
             this.btnCell01.Text = "?";
             this.btnCell01.UseVisualStyleBackColor = true;
-            this.btnCell01.Click += new System.EventHandler(this.btnCell01_Click);
+            this.btnCell01.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell02
             // 
@@ -130,7 +130,7 @@
             this.btnCell02.TabIndex = 5;
             this.btnCell02.Text = "?";
             this.btnCell02.UseVisualStyleBackColor = true;
-            this.btnCell02.Click += new System.EventHandler(this.btnCell02_Click);
+            this.btnCell02.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell10
             // 
@@ -141,7 +141,7 @@
             this.btnCell10.TabIndex = 5;
             this.btnCell10.Text = "?";
             this.btnCell10.UseVisualStyleBackColor = true;
-            this.btnCell10.Click += new System.EventHandler(this.btnCell10_Click);
+            this.btnCell10.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell11
             // 
@@ -152,7 +152,7 @@
             this.btnCell11.TabIndex = 5;
             this.btnCell11.Text = "?";
             this.btnCell11.UseVisualStyleBackColor = true;
-            this.btnCell11.Click += new System.EventHandler(this.btnCell11_Click);
+            this.btnCell11.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell12
             // 
@@ -163,7 +163,7 @@
             this.btnCell12.TabIndex = 5;
             this.btnCell12.Text = "?";
             this.btnCell12.UseVisualStyleBackColor = true;
-            this.btnCell12.Click += new System.EventHandler(this.btnCell12_Click);
+            this.btnCell12.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell20
             // 
@@ -174,7 +174,7 @@
             this.btnCell20.TabIndex = 5;
             this.btnCell20.Text = "?";
             this.btnCell20.UseVisualStyleBackColor = true;
-            this.btnCell20.Click += new System.EventHandler(this.btnCell20_Click);
+            this.btnCell20.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell21
             // 
@@ -185,7 +185,7 @@
             this.btnCell21.TabIndex = 5;
             this.btnCell21.Text = "?";
             this.btnCell21.UseVisualStyleBackColor = true;
-            this.btnCell21.Click += new System.EventHandler(this.btnCell21_Click);
+            this.btnCell21.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // btnCell22
             // 
@@ -196,7 +196,7 @@
             this.btnCell22.TabIndex = 5;
             this.btnCell22.Text = "?";
             this.btnCell22.UseVisualStyleBackColor = true;
-            this.btnCell22.Click += new System.EventHandler(this.btnCell22_Click);
+            this.btnCell22.Click += new System.EventHandler(this.btnCellxx_Click);
             // 
             // panel1
             // 

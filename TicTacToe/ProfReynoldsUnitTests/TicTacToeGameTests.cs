@@ -197,7 +197,7 @@ namespace ProfReynoldsUnitTests
 
             // assert
             ticTacToeGame.CheckForWinner().ShouldBeTrue();
-            ticTacToeGame.Winner.ShouldBe(CellOwners.Computer);
+            ticTacToeGame.Winner.ShouldBe(CellOwners.Human);
         }
 
         [TestMethod]
@@ -219,7 +219,7 @@ namespace ProfReynoldsUnitTests
             // assert
             ticTacToeGame.CheckForWinner().ShouldBeTrue();
             ticTacToeGame.Winner.ShouldBe(CellOwners.Human);
-            ticTacToeGame.IdentifyWinner().ShouldBe("Human");
+            ticTacToeGame.IdentifyWinner().ShouldBe("The Human");
         }
     }
 }

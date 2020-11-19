@@ -16,6 +16,43 @@ namespace Presentation_Tier
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            _ticTacToeGame.CellOwnerChanged += this.CellOwnerChangedHandler;
+        }
+
+        private void CellOwnerChangedHandler(object sender, Middle_Tier.TicTacToeGame.CellOwnerChangedArgs e)
+        {
+            var buttonName = $"btnCell{e.RowID}{e.ColID}";
+            foreach (var control in panel1.Controls)
+            {
+                if (control is Button button)
+                {
+                    if (button.Name == buttonName)
+                    {
+                        switch (e.CellOwner)
+                        {
+                            case TicTacToeEnums.CellOwners.Error:
+                                button.Text = "#";
+                                break;
+                            case TicTacToeEnums.CellOwners.Open:
+                                button.Text = "?";
+                                break;
+                            case TicTacToeEnums.CellOwners.Human:
+                                button.Text = "X";
+                                break;
+                            case TicTacToeEnums.CellOwners.Computer:
+                                button.Text = "O";
+                                break;
+
+                            default:
+                                throw new ArgumentOutOfRangeException();
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -48,7 +85,7 @@ namespace Presentation_Tier
 
             if (sender is Button btn)
             {
-                btn.Text = "?";
+                _ticTacToeGame.ResetGrid();
             }
         }
 
@@ -63,51 +100,6 @@ namespace Presentation_Tier
             {
                 MessageBox.Show("The Winner!");
             }
-        }
-
-        private void btnCell00_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell01_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell02_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell10_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell11_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell12_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell20_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell21_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
-        }
-
-        private void btnCell22_Click(object sender, EventArgs e)
-        {
-            btnCellxx_Click(sender, e);
         }
 
         private void btnCellxx_Click(object sender, EventArgs e)

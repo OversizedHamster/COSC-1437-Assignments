@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using TicTacToe_Interfaces;
 using static TicTacToe_Interfaces.TicTacToeEnums;
@@ -15,6 +16,24 @@ namespace Middle_Tier
         private readonly Collection<TicTacToeCell> _ticTacToeCells = new Collection<TicTacToeCell>();
         private Collection<TicTacToeCell> _goodNextMove = new Collection<TicTacToeCell>();
         private Collection<Collection<TicTacToeCell>> _winningCombinations = new Collection<Collection<TicTacToeCell>>();
+
+        public delegate void CellOwnerChangedHandler(object sender, CellOwnerChangedArgs e);
+
+        public event CellOwnerChangedHandler CellOwnerChanged;
+
+        public class CellOwnerChangedArgs : EventArgs
+        {
+            public CellOwnerChangedArgs(int rowID, int colID, CellOwners cellOwner)
+            {
+                RowID = rowID;
+                ColID = colID;
+                CellOwner = cellOwner;
+            }
+
+            public int RowID { get; }
+            public int ColID { get; }
+            public CellOwners CellOwner { get; }
+        }
 
         public void ResetGrid()
         {
@@ -99,6 +118,8 @@ namespace Middle_Tier
                     _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
                 }
             };
+
+            Debug.WriteLine("\nMethod: Reset()");
         }
 
         public CellOwners IdentifyCellOwner(int CellRow, int CellCol)
@@ -106,9 +127,15 @@ namespace Middle_Tier
             if (_ticTacToeCells.Count == 0)
                 return CellOwners.Error;
 
-            return _ticTacToeCells
-                .FirstOrDefault(tttc => tttc.RowID == CellRow & tttc.ColID == CellCol)
-                ?.CellOwner ?? CellOwners.Error;
+            var cellOwner =
+                _ticTacToeCells
+                    .FirstOrDefault(tttc => tttc.RowID == CellRow && tttc.ColID == CellCol)
+                    ?.CellOwner
+                ?? CellOwners.Error;
+
+            Debug.WriteLine($"Method: IdentifyCellOwner {CellRow}-{CellCol} --> {cellOwner}");
+
+            return cellOwner;
         }
 
         public void AssignCellOwner(int CellRow, int CellCol, CellOwners CellOwner)
@@ -123,10 +150,80 @@ namespace Middle_Tier
                 return;
 
             targetCell.CellOwner = CellOwner;
+            Debug.WriteLine($"Method: AssignCellOwner {CellRow}-{CellCol} --> {CellOwner}");
+
+            var eventArgs = new CellOwnerChangedArgs(CellRow, CellCol, CellOwner);
+
+            CellOwnerChanged?.Invoke(this, eventArgs);
         }
 
         public void AutoPlayComputer()
         {
+            if (Winner != CellOwners.Open)
+                return;
+
+            foreach (var combination in _winningCombinations)
+            {
+                if (combination[0].CellOwner == CellOwners.Open)
+                {
+                    if (combination[1].CellOwner == CellOwners.Computer &&
+                        combination[2].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+                if (combination[1].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Computer &&
+                        combination[2].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+                if (combination[2].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Computer &&
+                        combination[1].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+            }
+
+            foreach (var combination in _winningCombinations)
+            {
+                if (combination[0].CellOwner == CellOwners.Open)
+                {
+                    if (combination[1].CellOwner == CellOwners.Human &&
+                        combination[2].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+                if (combination[1].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Human &&
+                        combination[2].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+                if (combination[2].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Human &&
+                        combination[1].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        return;
+                    }
+                }
+            }
+
             foreach (var targetCell in _goodNextMove)
             {
                 if (targetCell.CellOwner == CellOwners.Open)
@@ -150,9 +247,11 @@ namespace Middle_Tier
 
                 Winner = firstCell.CellOwner;
 
+                Debug.WriteLine($"Method: CheckForWinnder {Winner}");
                 return true;
             }
 
+            Debug.WriteLine($"Method: CheckForWinnder {Winner}");
             return false;
         }
 
