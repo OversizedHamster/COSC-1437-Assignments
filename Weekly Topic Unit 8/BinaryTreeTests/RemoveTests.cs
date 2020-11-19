@@ -422,7 +422,8 @@ namespace BinaryTreeTests
             //          / \
             //         5   7   
 
-            int[] expected = new[] { 1, 3, 2, 5, 7, 6, 4, };
+            //int[] expected = new[] { 1, 3, 2, 5, 7, 6, 4, };
+            int[] expected = new[] { 1, 2, 5, 7, 6, 8, 4 };
 
             int index = 0;
 
