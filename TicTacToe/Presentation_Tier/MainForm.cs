@@ -50,7 +50,7 @@ namespace Presentation_Tier
         private void txtPlayerName_TextChanged(object sender, EventArgs e)
         {
             //as the content changes, this event will trigger as each character changes
-            bool playerNameIsValid = (txtPlayerName.Text.Length >= 3); // ProfReynolds - use var
+            var playerNameIsValid = (txtPlayerName.Text.Length >= 3); // ProfReynolds - use var
 
             btnStartNewGame.Enabled = playerNameIsValid;
             btnGoComputer.Enabled = playerNameIsValid;
@@ -61,6 +61,8 @@ namespace Presentation_Tier
         {
             //when the focus leaves the text box, this event is triggered
             // ProfReynolds - at this point, you need to assign the text box Text to the PlayerName
+            _ticTacToeGame.PlayerName = txtPlayerName.Text;
+
         }
 
         private void btnStartNewGame_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace Presentation_Tier
 
             if (_ticTacToeGame.CheckForWinner())
             {
-                MessageBox.Show("The Winner!");
+                MessageBox.Show("Computer", "The Winner!");
                 // ProfReynolds - this would be better: MessageBox.Show("Computer","The Winner!");
             }
         }
@@ -114,12 +116,12 @@ namespace Presentation_Tier
                 var colID = btn.Name.Substring(8, 1).ToInt();
                 Debug.WriteLine($"Button click: row={rowID} col={colID}");
                 _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToeEnums.CellOwners.Human);
-                btn.Text = "X"; // ProfReynolds - do not assign the X here. The CellOwnerChangedHandler will take care of it
+                //btn.Text = "X"; // ProfReynolds - do not assign the X here. The CellOwnerChangedHandler will take care of it
             }
 
             if (_ticTacToeGame.CheckForWinner())
             {
-                MessageBox.Show("The Winner!");
+                MessageBox.Show(_ticTacToeGame.PlayerName, "The Winner!");
                 // ProfReynolds - this would be better: MessageBox.Show(_ticTacToeGame.PlayerName,"The Winner!");
             }
         }

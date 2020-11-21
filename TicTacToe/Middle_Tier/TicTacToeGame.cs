@@ -228,10 +228,7 @@ namespace Middle_Tier
             {
                 if (targetCell.CellOwner == CellOwners.Open)
                 {
-                    // ProfReynolds - VERY important. replace this
-                    targetCell.CellOwner = CellOwners.Computer;
-                    // with this:
-                    // AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
+                    AssignCellOwner(targetCell.RowID, targetCell.ColID, CellOwners.Computer);
                     return;
                 }
             }

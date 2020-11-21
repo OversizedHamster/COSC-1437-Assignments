@@ -232,6 +232,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Tic Tac Toe CSharp Version - Ethan Smith";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
