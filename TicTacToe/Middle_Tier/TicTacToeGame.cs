@@ -3,7 +3,9 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using TicTacToe_Interfaces;
-using static TicTacToe_Interfaces.TicTacToeEnums;
+
+// ProfReynolds2 - no longer require this, removed
+// using static TicTacToe_Interfaces.TicTacToeEnums;
 
 //Ethan Smith
 
@@ -21,19 +23,11 @@ namespace Middle_Tier
 
         public event CellOwnerChangedHandler CellOwnerChanged;
 
-        public class CellOwnerChangedArgs : EventArgs
-        {
-            public CellOwnerChangedArgs(int rowID, int colID, CellOwners cellOwner)
-            {
-                RowID = rowID;
-                ColID = colID;
-                CellOwner = cellOwner;
-            }
 
-            public int RowID { get; }
-            public int ColID { get; }
-            public CellOwners CellOwner { get; }
-        }
+        /*
+         * ProfReynolds
+         * I moved the CellOwnerChangedArgs event to the bottom - personal preference - not wrong, just easier for me to follow
+         */
 
         public void ResetGrid()
         {
@@ -273,6 +267,12 @@ namespace Middle_Tier
             }
         }
 
+        /*
+         * ProfReynolds2
+         * these two methods were replaced by
+         *      CellOwners IdentifyCellOwner(int CellRow, int CellCol)
+         *      void AssignCellOwner(int CellRow, int CellCol, CellOwners CellOwner)
+         * I removed these methods and corrected the ITicTavToeGame interface
         public CellOwners IdentifyCellOwners(int CellRow, int CellCol)
         {
             throw new NotImplementedException();
@@ -281,6 +281,21 @@ namespace Middle_Tier
         public void SetCellOwner(int CellRow, int CellCol, CellOwners CellOwner)
         {
             throw new NotImplementedException();
+        }
+         */
+
+        public class CellOwnerChangedArgs : EventArgs
+        {
+            public CellOwnerChangedArgs(int rowID, int colID, CellOwners cellOwner)
+            {
+                RowID = rowID;
+                ColID = colID;
+                CellOwner = cellOwner;
+            }
+
+            public int RowID { get; }
+            public int ColID { get; }
+            public CellOwners CellOwner { get; }
         }
     }
 }

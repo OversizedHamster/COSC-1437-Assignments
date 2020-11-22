@@ -20,7 +20,7 @@ namespace ProfReynoldsUnitTests
             ticTacToeCell.ShouldNotBeNull();
             ticTacToeCell.ShouldBeOfType<TicTacToeCell>();
 
-            ticTacToeCell.CellOwner.ShouldBe(TicTacToeEnums.CellOwners.Open);
+            ticTacToeCell.CellOwner.ShouldBe(CellOwners.Open);
             ticTacToeCell.RowID.ShouldBe(0);
             ticTacToeCell.ColID.ShouldBe(0);
         }
@@ -48,11 +48,11 @@ namespace ProfReynoldsUnitTests
         }
 
         [DataTestMethod]
-        [DataRow(TicTacToeEnums.CellOwners.Error)]
-        [DataRow(TicTacToeEnums.CellOwners.Open)]
-        [DataRow(TicTacToeEnums.CellOwners.Human)]
-        [DataRow(TicTacToeEnums.CellOwners.Computer)]
-        public void Verify_Assignment_Of_CellOwner(TicTacToeEnums.CellOwners assignedCellOwner)
+        [DataRow(CellOwners.Error)]
+        [DataRow(CellOwners.Open)]
+        [DataRow(CellOwners.Human)]
+        [DataRow(CellOwners.Computer)]
+        public void Verify_Assignment_Of_CellOwner(CellOwners assignedCellOwner)
         {
             // assign
             var ticTacToeCell = new TicTacToeCell();

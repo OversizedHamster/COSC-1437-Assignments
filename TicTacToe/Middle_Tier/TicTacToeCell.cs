@@ -9,7 +9,7 @@ namespace Middle_Tier
     {
         /*
          * ProfReynolds
-         * It toopk a little head scratching to fiond out why your tests were unable to run.
+         * It took a little head scratching to find out why your tests were unable to run.
          * but here is the answer. You were setting the property from within the property
          * RowID = value;
          * see solution below
@@ -80,6 +80,7 @@ namespace Middle_Tier
             }
         }
 
-        public TicTacToeEnums.CellOwners CellOwner { get; set; } = TicTacToeEnums.CellOwners.Open;
+        // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+        public CellOwners CellOwner { get; set; } = CellOwners.Open;
     }
 }
