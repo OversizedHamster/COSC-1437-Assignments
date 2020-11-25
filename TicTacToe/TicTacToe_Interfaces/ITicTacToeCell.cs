@@ -6,6 +6,8 @@ namespace TicTacToe_Interfaces
     {
         int RowID { get; set; }
         int ColID { get; set; }
-        TicTacToeEnums.CellOwners CellOwner { get; set; }
+
+        // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+        CellOwners CellOwner { get; set; }
     }
 }

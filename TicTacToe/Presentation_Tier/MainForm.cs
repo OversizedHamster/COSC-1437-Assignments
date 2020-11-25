@@ -70,17 +70,31 @@ namespace Presentation_Tier
             //MessageBox.Show("btnStartNewGame", "ButtonClick");
 
             // ProfReynolds - in real life, you do not need the conditional because this method can ONLY
-            // be reacedif the sender is a button. We did it this way to reinforce the syntax
-            if (sender is Button btn)
+            // be reached if the sender is a button. We did it this way to reinforce the syntax
+            
+            // line removed by ProfReynolds2 : if (sender is Button btn)
+            // line removed by ProfReynolds2 : {
+            _ticTacToeGame.ResetGrid();
+            // line removed by ProfReynolds2 : }
+
+
+            /*
+             * ProfReynolds2
+             * I think I told you to remove this, but it is necessary
+             */
+            foreach (var item in panel1.Controls)
             {
-                _ticTacToeGame.ResetGrid();
+                if (item is Button btn)
+                    btn.Text = "?";
             }
         }
 
         private void btnGoComputer_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("btnGoComputer", "ButtonClick");
-            if (_ticTacToeGame.Winner != TicTacToeEnums.CellOwners.Open) return;
+
+            // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+            if (_ticTacToeGame.Winner != CellOwners.Open) return;
 
             _ticTacToeGame.AutoPlayComputer();
 
@@ -93,7 +107,8 @@ namespace Presentation_Tier
 
         private void btnCellxx_Click(object sender, EventArgs e)
         {
-            if (_ticTacToeGame.Winner != TicTacToeEnums.CellOwners.Open) return;
+            // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+            if (_ticTacToeGame.Winner != CellOwners.Open) return;
 
             //var btn = sender as Button;
 
@@ -115,7 +130,9 @@ namespace Presentation_Tier
                 var rowID = btn.Name.Substring(7, 1).ToInt();
                 var colID = btn.Name.Substring(8, 1).ToInt();
                 Debug.WriteLine($"Button click: row={rowID} col={colID}");
-                _ticTacToeGame.AssignCellOwner(rowID, colID, TicTacToeEnums.CellOwners.Human);
+
+                // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+                _ticTacToeGame.AssignCellOwner(rowID, colID, CellOwners.Human);
                 //btn.Text = "X"; // ProfReynolds - do not assign the X here. The CellOwnerChangedHandler will take care of it
             }
 
@@ -135,17 +152,17 @@ namespace Presentation_Tier
                     if (button.Name == buttonName)
                     {
                         switch (e.CellOwner)
-                        {
-                            case TicTacToeEnums.CellOwners.Error:
+                        {   // ProfReynolds2 removed the TicTacToeEnums. since that class is no longer used
+                            case CellOwners.Error:
                                 button.Text = "#";
                                 break;
-                            case TicTacToeEnums.CellOwners.Open:
+                            case CellOwners.Open:
                                 button.Text = "?";
                                 break;
-                            case TicTacToeEnums.CellOwners.Human:
+                            case CellOwners.Human:
                                 button.Text = "X";
                                 break;
-                            case TicTacToeEnums.CellOwners.Computer:
+                            case CellOwners.Computer:
                                 button.Text = "O";
                                 break;
 
