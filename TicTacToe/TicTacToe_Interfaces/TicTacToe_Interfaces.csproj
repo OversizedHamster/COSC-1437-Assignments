@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+	<!--Ethan Smith-->
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>

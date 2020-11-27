@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Middle_Tier;
 using Shouldly;
-using static TicTacToe_Interfaces.TicTacToeEnums;
+using TicTacToe_Interfaces;
 
 namespace ProfReynoldsUnitTests
 {

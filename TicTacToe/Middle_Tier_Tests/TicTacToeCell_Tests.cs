@@ -22,7 +22,7 @@ namespace Middle_Tier_Tests
             // assert
             ticTacToeCell.RowID.ShouldBe(0);
             ticTacToeCell.ColID.ShouldBe(0);
-            ticTacToeCell.CellOwner.ShouldBe(TicTacToeEnums.CellOwners.Open);
+            ticTacToeCell.CellOwner.ShouldBe(CellOwners.Open);
         }
 
         [DataTestMethod]
@@ -95,11 +95,11 @@ namespace Middle_Tier_Tests
 
 
         [DataTestMethod]
-        [DataRow(TicTacToeEnums.CellOwners.Error, TicTacToeEnums.CellOwners.Error)]
-        [DataRow(TicTacToeEnums.CellOwners.Open, TicTacToeEnums.CellOwners.Open)]
-        [DataRow(TicTacToeEnums.CellOwners.Human, TicTacToeEnums.CellOwners.Human)]
-        [DataRow(TicTacToeEnums.CellOwners.Computer, TicTacToeEnums.CellOwners.Computer)]
-        public void Verify_Assignment_Of_CellOwner(TicTacToeEnums.CellOwners attemptedAssignment, TicTacToeEnums.CellOwners expectedResult)
+        [DataRow(CellOwners.Error, CellOwners.Error)]
+        [DataRow(CellOwners.Open, CellOwners.Open)]
+        [DataRow(CellOwners.Human, CellOwners.Human)]
+        [DataRow(CellOwners.Computer, CellOwners.Computer)]
+        public void Verify_Assignment_Of_CellOwner(CellOwners attemptedAssignment, CellOwners expectedResult)
         {
             // assign
             var ticTacToeCell = new TicTacToeCell();
