@@ -19,7 +19,20 @@ namespace TicTacToeGraphics
                 switch (value)
                 {
                     case CellOwners.Error:
-                        this.BackgroundImage = Properties.Resources.
+                        this.BackgroundImage = Properties.Resources.smiley;
+                        break;
+                    case CellOwners.Open:
+                        this.BackgroundImage = Properties.Resources.OpenCell;
+                        break;
+                    case CellOwners.Human:
+                        this.BackgroundImage = Properties.Resources.Player_X;
+                        break;
+                    case CellOwners.Computer:
+                        this.BackgroundImage = Properties.Resources.Player_O;
+                        break;
+                    default:
+                        this.BackgroundImage = Properties.Resources.smiley;
+                        break;
                 }
             }
         }
