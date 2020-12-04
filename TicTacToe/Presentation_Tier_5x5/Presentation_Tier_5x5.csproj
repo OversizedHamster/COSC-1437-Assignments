@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<!--Ethan Smith-->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+	  <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <ApplicationIcon>tic-tac-toe.ico</ApplicationIcon>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj" />
+    <ProjectReference Include="..\Middle_Tier\Middle_Tier.csproj" />
+    <ProjectReference Include="..\TicTacToe_Interfaces\TicTacToe_Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainForm5x5.cs" />
+  </ItemGroup>
+
+</Project>

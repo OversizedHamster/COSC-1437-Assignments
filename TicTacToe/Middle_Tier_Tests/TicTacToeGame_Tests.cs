@@ -25,7 +25,6 @@ namespace Middle_Tier_Tests
             ticTacToeGame.PlayerName.ShouldBe("The Human"); // ie. player name property properly initialized
             ticTacToeGame.CheckForWinner().ShouldBeFalse(); // ie. no winner, yet
             ticTacToeGame.Winner.ShouldBe(CellOwners.Error); // winner property is not initialized (defaults to Error)
-            ticTacToeGame.IdentifyWinner().ShouldBeEmpty();
         }
 
         [TestMethod]
@@ -87,8 +86,8 @@ namespace Middle_Tier_Tests
             ticTacToeGame.IdentifyCellOwner(0, 2).ShouldBe(CellOwners.Open);
             ticTacToeGame.IdentifyCellOwner(0, 11).ShouldBe(CellOwners.Error); // out of bounds
             ticTacToeGame.IdentifyCellOwner(0, -1).ShouldBe(CellOwners.Error);
-            ticTacToeGame.IdentifyCellOwner(0, 3).ShouldBe(CellOwners.Error);
-            ticTacToeGame.IdentifyCellOwner(3, 0).ShouldBe(CellOwners.Error);
+            ticTacToeGame.IdentifyCellOwner(0, 3).ShouldBe(CellOwners.Open);
+            ticTacToeGame.IdentifyCellOwner(3, 0).ShouldBe(CellOwners.Open);
 
             ticTacToeGame.CheckForWinner().ShouldBeFalse(); // no winner yet
             ticTacToeGame.Winner.ShouldBe(CellOwners.Open); // winner property should now be Open
@@ -185,6 +184,15 @@ namespace Middle_Tier_Tests
             ticTacToeGame.AutoPlayComputer();
             ticTacToeGame.AutoPlayComputer();
             ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AutoPlayComputer();
 
             // assert
             ticTacToeGame.CheckForWinner().ShouldBeTrue();
@@ -200,11 +208,23 @@ namespace Middle_Tier_Tests
 
             // act
             ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(0, 0, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(0, 1, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(2, 0, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(0, 3, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
             ticTacToeGame.AssignCellOwner(1, 0, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(1, 2, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(1, 3, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(3, 4, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(4, 1, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(4, 2, CellOwners.Human);
+            ticTacToeGame.AutoPlayComputer();
+            ticTacToeGame.AssignCellOwner(4, 3, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
 
             // assert
@@ -222,16 +242,16 @@ namespace Middle_Tier_Tests
             // act
             ticTacToeGame.AssignCellOwner(0, 0, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(2, 2, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(3, 3, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(2, 0, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(4, 4, CellOwners.Human);
             ticTacToeGame.AutoPlayComputer();
-            ticTacToeGame.AssignCellOwner(1, 0, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(1, 1, CellOwners.Human);
 
             // assert
             ticTacToeGame.CheckForWinner().ShouldBeTrue();
             ticTacToeGame.Winner.ShouldBe(CellOwners.Human);
-            ticTacToeGame.IdentifyWinner().ShouldBe("Human");
+            ticTacToeGame.IdentifyWinner().ShouldBe("The Human");
         }
 
         [TestMethod]
@@ -246,6 +266,8 @@ namespace Middle_Tier_Tests
             ticTacToeGame.AssignCellOwner(0, 0, CellOwners.Human);
             ticTacToeGame.AssignCellOwner(1, 1, CellOwners.Human);
             ticTacToeGame.AssignCellOwner(2, 2, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(3, 3, CellOwners.Human);
+            ticTacToeGame.AssignCellOwner(4, 4, CellOwners.Human);
             ticTacToeGame.CheckForWinner();
 
             // assert

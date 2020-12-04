@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TicTacToe_Interfaces;
+using System.Drawing;
 
 //Ethan Smith
 
@@ -10,32 +11,32 @@ namespace TicTacToeGraphics
     {
         private CellOwners _cellOwner = CellOwners.Error;
 
-        public CellOwners GameCellOwner
-        {
-            get { return _cellOwner; }
-            set
-            {
-                _cellOwner = value;
-                switch (value)
-                {
-                    case CellOwners.Error:
-                        this.BackgroundImage = Properties.Resources.smiley;
-                        break;
-                    case CellOwners.Open:
-                        this.BackgroundImage = Properties.Resources.OpenCell;
-                        break;
-                    case CellOwners.Human:
-                        this.BackgroundImage = Properties.Resources.Player_X;
-                        break;
-                    case CellOwners.Computer:
-                        this.BackgroundImage = Properties.Resources.Player_O;
-                        break;
-                    default:
-                        this.BackgroundImage = Properties.Resources.smiley;
-                        break;
-                }
-            }
-        }
+        //public CellOwners GameCellOwner
+        //{
+        //    get { return _cellOwner; }
+        //    set
+        //    {
+        //        _cellOwner = value;
+        //        switch (value)
+        //        {
+        //        //    case CellOwners.Error:
+        //        //        this.BackgroundImage = Properties.Resources.smiley;
+        //        //        break;
+        //        //    case CellOwners.Open:
+        //        //        this.BackgroundImage = Properties.Resources.OpenCell;
+        //        //        break;
+        //        //    case CellOwners.Human:
+        //        //        this.BackgroundImage = Properties.Resources.Player_X;
+        //        //        break;
+        //        //    case CellOwners.Computer:
+        //        //        this.BackgroundImage = Properties.Resources.Player_O;
+        //        //        break;
+        //        //    default:
+        //        //        this.BackgroundImage = Properties.Resources.smiley;
+        //        //        break;
+        //        //}
+        //    }
+        //}
 
         public delegate void CellOwnerChangedHandler(object sender);
 

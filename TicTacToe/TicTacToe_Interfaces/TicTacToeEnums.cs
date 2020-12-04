@@ -1,6 +1,4 @@
-﻿using System;
-
-//Ethan Smith
+﻿//Ethan Smith
 
 namespace TicTacToe_Interfaces
 {

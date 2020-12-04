@@ -64,7 +64,7 @@ namespace ProfReynoldsUnitTests
 
         [DataTestMethod]
         [DataRow(-1)]
-        [DataRow(3)]
+        [DataRow(5)]
         [DataRow(999)]
         public void Assignment_Of_RowID_Outside_Range_Should_Fault(int attemptedAssignment)
         {
@@ -83,7 +83,7 @@ namespace ProfReynoldsUnitTests
 
         [DataTestMethod]
         [DataRow(-1)]
-        [DataRow(3)]
+        [DataRow(5)]
         [DataRow(999)]
         public void Assignment_Of_ColID_Outside_Range_Should_Fault(int attemptedAssignment)
         {

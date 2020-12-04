@@ -36,8 +36,8 @@ namespace Middle_Tier
             Winner = CellOwners.Open;
 
             // create the 9 cells
-            for (var rowNo = 0; rowNo < 3; rowNo++)
-            for (var colNo = 0; colNo < 3; colNo++)
+            for (var rowNo = 0; rowNo < 5; rowNo++)
+            for (var colNo = 0; colNo < 5; colNo++)
             {
                 _ticTacToeCells.Add(new TicTacToeCell
                 {
@@ -49,15 +49,34 @@ namespace Middle_Tier
 
             _goodNextMove = new Collection<TicTacToeCell>()
             {
-                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                //4 corners
                 _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4),
+                _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4),
+
+                //middle boxes on sides
                 _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
                 _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
-                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2),
+                _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==2),
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==4),
+
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==3),
                 _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==3),
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==1),
+                _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==3),
+
+
                 _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
-                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
-                _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1)
+                _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==4),
+                _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==0),
+                _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==4),
 
             };
 
@@ -67,49 +86,93 @@ namespace Middle_Tier
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==4)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==4)
+                },
+                new Collection<TicTacToeCell>()
+                {
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==0),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==4)
+                },
+                new Collection<TicTacToeCell>()
+                {
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==1),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==0),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==0),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==1),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1)
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==1),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==1)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==2),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==2),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==2)
+                },
+                new Collection<TicTacToeCell>()
+                {
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==3)
+                },
+                new Collection<TicTacToeCell>()
+                {
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4),
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==4),
+                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==4),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==4),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
                 },
                 new Collection<TicTacToeCell>()
                 {
                     _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==0),
                     _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==2)
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==4)
                 },
                 new Collection<TicTacToeCell>()
                 {
-                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==2),
-                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==1),
-                    _ticTacToeCells.First(tttc => tttc.RowID==2 && tttc.ColID==0)
+                    _ticTacToeCells.First(tttc => tttc.RowID==0 && tttc.ColID==4),
+                    _ticTacToeCells.First(tttc => tttc.RowID==1 && tttc.ColID==3),
+                    _ticTacToeCells.First(tttc => tttc.RowID==3 && tttc.ColID==1),
+                    _ticTacToeCells.First(tttc => tttc.RowID==4 && tttc.ColID==0)
                 }
             };
 
@@ -160,8 +223,21 @@ namespace Middle_Tier
             {
                 if (combination[0].CellOwner == CellOwners.Open)
                 {
+                    if (combination.Count == 5)
+                    {
+                        if (combination[1].CellOwner == CellOwners.Computer &&
+                            combination[2].CellOwner == CellOwners.Computer &&
+                            combination[3].CellOwner == CellOwners.Computer &&
+                            combination[4].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+
                     if (combination[1].CellOwner == CellOwners.Computer &&
-                        combination[2].CellOwner == CellOwners.Computer)
+                        combination[2].CellOwner == CellOwners.Computer &&
+                        combination[3].CellOwner == CellOwners.Computer)
                     {
                         AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
                         return;
@@ -169,19 +245,84 @@ namespace Middle_Tier
                 }
                 if (combination[1].CellOwner == CellOwners.Open)
                 {
-                    if (combination[0].CellOwner == CellOwners.Computer &&
-                        combination[2].CellOwner == CellOwners.Computer)
+                    if (combination.Count == 5)
                     {
-                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        return;
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[2].CellOwner == CellOwners.Computer &&
+                            combination[3].CellOwner == CellOwners.Computer &&
+                            combination[4].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[2].CellOwner == CellOwners.Computer &&
+                            combination[3].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                            return;
+                        }
                     }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
                 {
-                    if (combination[0].CellOwner == CellOwners.Computer &&
-                        combination[1].CellOwner == CellOwners.Computer)
+                    if (combination.Count == 5)
                     {
-                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[1].CellOwner == CellOwners.Computer &&
+                            combination[3].CellOwner == CellOwners.Computer &&
+                            combination[4].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[1].CellOwner == CellOwners.Computer &&
+                            combination[3].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                }
+                if (combination[3].CellOwner == CellOwners.Open)
+                {
+                    if (combination.Count == 5)
+                    {
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[1].CellOwner == CellOwners.Computer &&
+                            combination[2].CellOwner == CellOwners.Computer &&
+                            combination[4].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[3].RowID, combination[3].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Computer &&
+                            combination[1].CellOwner == CellOwners.Computer &&
+                            combination[2].CellOwner == CellOwners.Computer)
+                        {
+                            AssignCellOwner(combination[3].RowID, combination[3].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                }
+                if (combination.Count == 5 && combination[4].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Computer &&
+                        combination[1].CellOwner == CellOwners.Computer &&
+                        combination[2].CellOwner == CellOwners.Computer &&
+                        combination[3].CellOwner == CellOwners.Computer)
+                    {
+                        AssignCellOwner(combination[4].RowID, combination[4].ColID, CellOwners.Computer);
                         return;
                     }
                 }
@@ -191,28 +332,108 @@ namespace Middle_Tier
             {
                 if (combination[0].CellOwner == CellOwners.Open)
                 {
-                    if (combination[1].CellOwner == CellOwners.Human &&
-                        combination[2].CellOwner == CellOwners.Human)
+                    if (combination.Count == 5)
                     {
-                        AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
-                        return;
+                        if (combination[1].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human &&
+                            combination[4].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[1].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[0].RowID, combination[0].ColID, CellOwners.Computer);
+                            return;
+                        }
                     }
                 }
                 if (combination[1].CellOwner == CellOwners.Open)
                 {
-                    if (combination[0].CellOwner == CellOwners.Human &&
-                        combination[2].CellOwner == CellOwners.Human)
+                    if (combination.Count == 5)
                     {
-                        AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
-                        return;
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human &&
+                            combination[4].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[1].RowID, combination[1].ColID, CellOwners.Computer);
+                            return;
+                        }
                     }
                 }
                 if (combination[2].CellOwner == CellOwners.Open)
                 {
-                    if (combination[0].CellOwner == CellOwners.Human &&
-                        combination[1].CellOwner == CellOwners.Human)
+                    if (combination.Count == 5)
                     {
-                        AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[1].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human &&
+                            combination[4].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[1].CellOwner == CellOwners.Human &&
+                            combination[3].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[2].RowID, combination[2].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                }
+                if (combination[3].CellOwner == CellOwners.Open)
+                {
+                    if (combination.Count == 5)
+                    {
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[1].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human &&
+                            combination[4].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[3].RowID, combination[3].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (combination[0].CellOwner == CellOwners.Human &&
+                            combination[1].CellOwner == CellOwners.Human &&
+                            combination[2].CellOwner == CellOwners.Human)
+                        {
+                            AssignCellOwner(combination[3].RowID, combination[3].ColID, CellOwners.Computer);
+                            return;
+                        }
+                    }
+                }
+                if (combination.Count == 5 && combination[4].CellOwner == CellOwners.Open)
+                {
+                    if (combination[0].CellOwner == CellOwners.Human &&
+                        combination[1].CellOwner == CellOwners.Human &&
+                        combination[2].CellOwner == CellOwners.Human &&
+                        combination[3].CellOwner == CellOwners.Human)
+                    {
+                        AssignCellOwner(combination[4].RowID, combination[4].ColID, CellOwners.Computer);
                         return;
                     }
                 }
@@ -236,8 +457,19 @@ namespace Middle_Tier
                 if ((firstCell.CellOwner != CellOwners.Computer) &&
                     (firstCell.CellOwner != CellOwners.Human)) continue;
 
-                if ((firstCell.CellOwner != combination[1].CellOwner) ||
-                    (firstCell.CellOwner != combination[2].CellOwner)) continue;
+                if (combination.Count == 5)
+                {
+                    if ((firstCell.CellOwner != combination[1].CellOwner) ||
+                        (firstCell.CellOwner != combination[2].CellOwner) ||
+                        (firstCell.CellOwner != combination[3].CellOwner) ||
+                        (firstCell.CellOwner != combination[4].CellOwner)) continue;
+                }
+                else
+                {
+                    if ((firstCell.CellOwner != combination[1].CellOwner) ||
+                        (firstCell.CellOwner != combination[2].CellOwner) ||
+                        (firstCell.CellOwner != combination[3].CellOwner)) continue;
+                }
 
                 Winner = firstCell.CellOwner;
 

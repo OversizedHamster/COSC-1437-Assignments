@@ -52,7 +52,7 @@ namespace Middle_Tier
             get => _rowID; // ProfReynolds - fixed this
             set
             {
-                if (value < 0 || value > 2)
+                if (value < 0 || value > 4)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -69,7 +69,7 @@ namespace Middle_Tier
             get => _colID; // ProfReynolds - fixed this
             set
             {
-                if (value < 0 || value > 2)
+                if (value < 0 || value > 4)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
