@@ -80,7 +80,8 @@ namespace Presentation_Tier_5x5
             {
                 if (item is Button btn)
                 {
-                    if(btn.Name.ToLower().Trim() == "btnWildCard") 
+                    // ProfReynolds 1204 - I changed the logic from '==' to '!='
+                    if(btn.Name.ToLower().Trim() != "btnWildCard") 
                         btn.Text = "?";
                 }
             }
